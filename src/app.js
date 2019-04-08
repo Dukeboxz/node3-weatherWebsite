@@ -60,7 +60,7 @@ app.get('/weather', (req, res)=>{
               error: 'Could not find location'
           }); 
         }
-        forecast(longtitude, latitude, (error, {dailySummary:currentSummary, currentTemp, chanceOfRain})=> {
+        forecast(longtitude, latitude, (error, {dailySummary:currentSummary, currentTemp, chanceOfRain, highTemp, lowTemp})=> {
       
           if(error){
            return  res.send({
@@ -74,7 +74,8 @@ app.get('/weather', (req, res)=>{
               ' % chance of rain', 
               givenlocation: req.query.address,
               temperature: currentTemp, 
-              chanceOfRain: chanceOfRain
+              chanceOfRain: chanceOfRain, 
+              tempString: "This high for today is " + highTemp  + " and the low is " + lowTemp
           })
          
          

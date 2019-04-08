@@ -14,6 +14,7 @@ const weatherForm = document.querySelector('form')
 const search = document.querySelector('input'); 
 const message1 =document.querySelector('#message-1')
 const message2 = document.querySelector('#message-2')
+const message3 = document.querySelector('#message-3')
 
 
 
@@ -30,6 +31,7 @@ weatherForm.addEventListener('submit', (e)=>{
         } else{
             message1.textContent = data.givenlocation
             message2.textContent = data.forecastSummary
+            message3.textContent = data.tempString
         }
     })
 })
